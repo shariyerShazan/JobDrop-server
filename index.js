@@ -30,9 +30,7 @@ app.get("/" , (req , res)=>{
         success: true
     })
 }) 
-app.use("/api/users" , userRoutes)
-app.use("/api/jobs" , jobRoutes)
-app.use("/api/applications" , applicationRoutes)
+
 
 
 // server
