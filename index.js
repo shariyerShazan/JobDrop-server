@@ -13,7 +13,10 @@ import applicationRoutes from "./routes/application.route.js"
 // middlewares
 app.use(cookieParser())
 app.use(cors({
-    origin: "https://jobdrop-shazan.netlify.app", 
+    origin: [
+        "http://localhost:5173",   
+        "https://jobdrop-shazan.netlify.app" 
+      ], 
     credentials: true
   }))
 app.use(express.json())
