@@ -81,7 +81,7 @@ export const login = async (req , res)=>{
         return res.status(400).json({
             message: "Something is missing",
             success: false
-        })
+        })  
     }
     const user = await User.findOne({email})
     if(!user){
@@ -89,7 +89,7 @@ export const login = async (req , res)=>{
             message: "User not exist with this email",
             success: false
         })
-    }
+    } 
     if(user.role !== role){
         return res.status(404).json({
             message: "User not exist with this, 'role'"

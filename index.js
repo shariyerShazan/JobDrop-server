@@ -9,7 +9,7 @@ import userRoutes from "./routes/user.route.js"
 import jobRoutes from "./routes/job.route.js"
 import applicationRoutes from "./routes/application.route.js"
  
-connectDB()
+
 // middlewares
 app.use(cookieParser())
 app.use(cors({
@@ -34,6 +34,11 @@ app.use("/api/applications" , applicationRoutes)
 
 // server
 const PORT = process.env.PORT || 4008
-app.listen(PORT , ()=>{
-    console.log(`Your server is running at http://localhost:${PORT}`)
-})
+
+const runServer = async (req, res)=>{
+    await connectDB()
+    app.listen(PORT , ()=>{
+        console.log(`Your server is running at http://localhost:${PORT}`)
+    })
+}
+runServer()
